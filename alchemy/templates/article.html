@@ -64,6 +64,23 @@
           <i class="fas fa-link"></i> view link
         </a></p>
       {% endif %}
+      <hr>
+      <div class="row text-center">
+          <div class="col-sm-6">
+            {% if article.prev_article %}
+              <a href="{{ SITEURL }}/{{ article.prev_article.url}}">
+                &larr;{{ article.prev_article.title|lower }}
+              </a>
+            {% endif %}
+          </div>
+          <div class="col-sm-6">
+            {% if article.next_article %}
+              <a href="{{ SITEURL }}/{{ article.next_article.url}}">
+                {{ article.next_article.title|lower }}&rarr;
+              </a>
+            {% endif %}
+          </div>
+      </div>
     </div>
   </article>
   {% include 'include/comments.html' %}
